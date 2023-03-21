@@ -1,38 +1,127 @@
-.App {
-  text-align: center;
+body{
+  background-color: #212529;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.contenedorEst{  
+  height: 750px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.colorArribaMilitar{
+  background-image: url(../public/Img/tablaMilitar.jpg);
   color: white;
+  border:1px solid black;
+  
+  
 }
 
-.App-link {
-  color: #61dafb;
+.colorArribaResto{
+  background-color: #0b2449;
+  color: white;
+  border:1px solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fondoMilitar{
+  background-image: url(../public/Img/fondo1.jpg);
+  background-repeat: no-repeat;
+}
+
+.fondoTerra{
+  background-image: url(../public/Img/fondoTerra.jpg);
+  background-repeat: no-repeat;
+
+}
+
+.fondoCatan{
+  background-image: url(../public/Img/fondoCatan.jpg);
+  background-size: cover; 
+  background-repeat: no-repeat;
+}
+
+.colorAbajo{
+  background-color: darkslategray;
+  color:white;
+}
+
+.table{
+  width: 50%;
+  margin-top: 230px;  
+  overflow: hidden;
+  border: 2px solid black;
+  vertical-align:middle;
+  caret-color: transparent;
+  border-collapse: separate; 
+  border-spacing: 0px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  font-weight: bold;
+
+}
+
+
+
+
+
+.BordeTabla:first-child{
+  background-color: rgb(224, 218, 142);
+  color:black;
+}
+.BordeTabla:nth-child(2){
+  background-color: rgb(143, 141, 141);
+  color:black;
+}
+.BordeTabla:nth-child(3){
+  background-color: darkgoldenrod;
+  color:black;
+}
+.BordeTabla:last-child{
+  border:transparent;
+}
+
+.CardAzul{
+  background-color: #0b2449;
+  border: 3px solid black;
+}
+
+.borde{
+  border: 3px solid black;
+}
+
+.noticias{
+  background-color: #06152b;
+  border: 3px solid black;
+  width: 70%;
+  height: 300px;  
+  
+}
+
+.contendorImg{  
+  height: 293px;    
+  width: 70%;
+  overflow: hidden;
+}
+.contendorImg img{   
+ 
+  transition: transform .2s;
+  width: 100%;
+  height: 293px;
+  
+}
+
+.contendorImg img:hover{  
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.noticiasInfo{
+  width: 100%;
+}
+.noticias h1{
+  color:white;
+}
+
+.noticias h1:hover{
+  color:#c98337;
+  cursor: pointer;
 }

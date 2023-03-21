@@ -1,0 +1,74 @@
+[
+    {
+        "nombre":"Tuky",
+        "img":"./img/bandera polonia.png",
+        "PJ":0,
+        "PG":0,
+        "PE":0,
+        "PP":0,        
+        "Pts":0
+    },
+    {
+        "nombre":"Rod",
+        "img":"./img/bandera polonia.png",
+        "PJ":0,
+        "PG":0,
+        "PE":0,
+        "PP":0,        
+        "Pts":0
+    },
+    {
+        "nombre":"Darwi",
+        "img":"./img/bandera polonia.png",
+        "PJ":0,
+        "PG":0,
+        "PE":0,
+        "PP":0,        
+        "Pts":0
+    },
+    {
+        "nombre":"ShadowHunter",
+        "img":"./img/bandera polonia.png",
+        "PJ":0,
+        "PG":0,
+        "PE":0,
+        "PP":0,        
+        "Pts":0
+    },
+    {
+        "nombre":"Cholo",
+        "img":"./img/bandera polonia.png",
+        "PJ":0,
+        "PG":0,
+        "PE":0,
+        "PP":0,        
+        "Pts":0
+    },
+    {
+        "nombre":"Leto",
+        "img":"./img/bandera polonia.png",
+        "PJ":0,
+        "PG":0,
+        "PE":0,
+        "PP":0,        
+        "Pts":0
+    },
+    {
+        "nombre":"Giannota",
+        "img":"./img/bandera polonia.png",
+        "PJ":0,
+        "PG":0,
+        "PE":0,
+        "PP":0,        
+        "Pts":0
+    },
+    {
+        "nombre":"Ace",
+        "img":"./img/bandera polonia.png",
+        "PJ":0,
+        "PG":0,
+        "PE":0,
+        "PP":0,        
+        "Pts":5
+    }
+]
