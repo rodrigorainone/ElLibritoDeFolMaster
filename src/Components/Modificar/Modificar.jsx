@@ -57,7 +57,7 @@ const Modificar = () => {
     }, []);
 
    
-    
+  
     
     
     
@@ -213,30 +213,30 @@ const Modificar = () => {
 
                 <div className='d-flex gap-2 mt-3'>
                     <label htmlFor="PJ" className="form-label">PJ :</label>
-                    <input type="text" className="form-control border border-secondary inputTablero" name="PJ" ma="0" pattern="^[0-9]+" required/>  
+                    <input type="text" className="form-control border border-secondary inputTablero" name="PJ" maxlength="1" pattern="^[0-9]+" required/>  
                 </div>
                
                 <div className='d-flex gap-2 mt-3'>
                     <label htmlFor="PG" className="form-label">PG :</label>
-                    <input type="text" className="form-control border border-secondary inputTablero" name="PG" required/>     
+                    <input type="text" className="form-control border border-secondary inputTablero" name="PG" maxlength="1" pattern="^[0-9]+" required/>     
                 </div>
                
 
                <div className='d-flex gap-2 mt-3'>
                      <label htmlFor="PE" className="form-label">PE :</label>
-                    <input type="text" className="form-control border border-secondary inputTablero" name="PE" required/>        
+                    <input type="text" className="form-control border border-secondary inputTablero" name="PE" maxlength="1" pattern="^[0-9]+" required/>        
 
                </div>
 
 
                <div className='d-flex gap-2 mt-3'>
                     <label htmlFor="PP" className="form-label">PP :</label>
-                     <input type="text" className="form-control border border-secondary inputTablero" name="PP" required/>       
+                     <input type="text" className="form-control border border-secondary inputTablero" name="PP" maxlength="1" pattern="^[0-9]+" required/>       
                </div>
 
                <div className='d-flex gap-2 mt-3'>
                       <label htmlFor="Pts" className="form-label">Pts :</label>
-                      <input type="text" className="form-control border border-secondary inputTablero" name="Pts" required/>     
+                      <input type="text" className="form-control border border-secondary inputTablero" name="Pts" maxlength="1" pattern="^[0-9]+" required/>     
                 </div>       
 
             </div>
