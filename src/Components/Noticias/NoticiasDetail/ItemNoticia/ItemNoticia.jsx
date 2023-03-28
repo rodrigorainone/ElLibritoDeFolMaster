@@ -7,7 +7,7 @@ const ItemNoticia = ({dato}) => {
                 <img src={dato.img} alt="" />
             </div>   
             <div className=' noticiasInfo mt-4'>                 
-                 <h1 className='text-center titu'>{dato.titulo}</h1>                 
+                 <h2 className='text-center titu'>{dato.titulo}</h2>                 
                  <p className='text-light p-5'>{dato.texto}</p>
             </div>
             

@@ -2,6 +2,7 @@ import React from 'react';
 import { useState ,useEffect } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
+import { getProductos } from '../../Firebase/firebase';
 
 const Estadisticas = () => {
     const [arreEst,setarreEst] = useState([])
@@ -19,18 +20,18 @@ const Estadisticas = () => {
                 settablaUpColor(true)
                 switch (modalidad) {
                     case '1vs1':
-                        aux='../../Json/Coh1vs1.json';                                              
+                        aux='Coh1vs1';                                              
                       break;
                     case '2vs2':
-                        aux='../../Json/Coh2vs2.json';
+                        aux='Coh2vs2';
                         
                     break;                        
                     case '3vs3':
-                        aux='../../Json/Coh3vs3.json';
+                        aux='Coh3vs3';
                         
                       break;
                     case '4vs4':
-                        aux='../../Json/Coh4vs4.json';
+                        aux='Coh4vs4';
                         
                     break;
                     default:
@@ -41,12 +42,12 @@ const Estadisticas = () => {
                 settablaUpColor(false)
             switch (juego) {
                 case 'Catan':
-                    aux='../../Json/Catan.json';
+                    aux='Catan';
                     setfondo('contenedorEst fondoCatan');
                     
                   break;
-                case 'Terraforming Mars':
-                    aux='../../Json/Terraforming.json';
+                case 'TerraformingMars':
+                    aux='Terraforming';
                     setfondo('contenedorEst fondoTerra');
                    
                 break;               
@@ -55,9 +56,9 @@ const Estadisticas = () => {
             }
         }
         
-        fetch(aux)
-        .then (res => res.json())
+        getProductos(aux)
         .then(data=>{
+            console.log(data);
             const arreEstOrd=data;
             arreEstOrd.sort((a,b) =>  {
                 if (a.Pts > b.Pts)

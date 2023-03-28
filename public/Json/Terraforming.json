@@ -2,11 +2,11 @@
     {
         "nombre":"Tuky",
         "img":"./img/bandera polonia.png",
-        "PJ":5,
+        "PJ":0,
         "PG":0,
         "PE":0,
         "PP":0,        
-        "Pts":5
+        "Pts":0
     },
     {
         "nombre":"Rod",
@@ -15,25 +15,25 @@
         "PG":0,
         "PE":0,
         "PP":0,        
-        "Pts":2
+        "Pts":0
     },
     {
         "nombre":"Darwi",
         "img":"./img/bandera polonia.png",
-        "PJ":2,
+        "PJ":0,
         "PG":0,
         "PE":0,
         "PP":0,        
-        "Pts":3
+        "Pts":0
     },
     {
         "nombre":"ShadowHunter",
         "img":"./img/bandera polonia.png",
-        "PJ":1,
+        "PJ":0,
         "PG":0,
         "PE":0,
         "PP":0,        
-        "Pts":3
+        "Pts":0
     },
     {
         "nombre":"Cholo",
@@ -42,7 +42,7 @@
         "PG":0,
         "PE":0,
         "PP":0,        
-        "Pts":8
+        "Pts":0
     },
     {
         "nombre":"Leto",
@@ -51,7 +51,7 @@
         "PG":0,
         "PE":0,
         "PP":0,        
-        "Pts":7
+        "Pts":0
     },
     {
         "nombre":"Giannota",
@@ -60,7 +60,7 @@
         "PG":0,
         "PE":0,
         "PP":0,        
-        "Pts":5
+        "Pts":0
     },
     {
         "nombre":"Ace",
@@ -69,6 +69,6 @@
         "PG":0,
         "PE":0,
         "PP":0,        
-        "Pts":5
+        "Pts":0
     }
 ]

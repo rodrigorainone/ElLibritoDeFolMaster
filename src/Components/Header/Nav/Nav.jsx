@@ -26,9 +26,12 @@ const Nav = () => {
           </a>
           <ul className="dropdown-menu">
             <li><Link className="dropdown-item" to={"Estadisticas/Coh3"}>Coh3</Link></li>
-            <li><Link className="dropdown-item" to={"/Estadisticas/Terraforming Mars"}>Terraforming Mars</Link></li>
+            <li><Link className="dropdown-item" to={"/Estadisticas/TerraformingMars"}>Terraforming Mars</Link></li>
             <li><Link className="dropdown-item" to={"/Estadisticas/Catan"}>Catan</Link></li>
           </ul>
+        </li>
+        <li className="nav-item">
+        <Link className="nav-link" to={"/Panel"}>Panel</Link>
         </li>
       </ul>
     </div>
