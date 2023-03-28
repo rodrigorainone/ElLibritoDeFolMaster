@@ -10,6 +10,8 @@ import Home from './Components/Home/Home';
 import { cargarBDD,cargarBDD2,cargarBDD3 ,cargarBDD4, cargarBDDCatan, cargarBDDTerra } from './Firebase/firebase';
 import Modificar from './Components/Modificar/Modificar';
 import Panel from './Components/Panel/Panel';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   //cargarBDD()
@@ -30,7 +32,8 @@ function App() {
           <Route path='/Estadisticas/Coh3/:modalidad' element={<Estadisticas/>} /> 
           <Route path='/Panel' element={<Panel/>} /> 
           <Route path='/Panel/:modalidad' element={<Modificar/>} /> 
-        </Routes>        
+        </Routes>    
+        <ToastContainer/>    
         <Footer/>
      </BrowserRouter>
     </>

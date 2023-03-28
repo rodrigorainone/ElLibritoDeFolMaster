@@ -3,6 +3,7 @@ import { getProductos , getProducto , updateProducto} from '../../Firebase/fireb
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import {toast} from 'react-toastify'
 
 const Modificar = () => {
 
@@ -78,6 +79,7 @@ const Modificar = () => {
                             prodBDD.PJ +=1
                             updateProducto(found.id, prodBDD,aux)
                         }) 
+                        
                        
                                 
                            
@@ -106,7 +108,8 @@ const Modificar = () => {
               break;            
             default:
               console.log('Lo lamentamos, por el momento no disponemos de ' + cliente.resultado + '.');
-          }    
+          } 
+        toast.success(`¡El cambio  fue realizada con exito`)   
         }
 
 
@@ -126,7 +129,7 @@ const Modificar = () => {
                 prodBDD.Pts = cliente2.Pts
                 updateProducto(found2.id, prodBDD,aux)
             })
-
+            toast.success(`¡El cambio  fue realizada con exito`)
 
         }
 
@@ -134,7 +137,7 @@ const Modificar = () => {
         const reiniciar = (e) =>{
 
             getProductos(aux)
-        .then(element=>{
+            .then(element=>{
 
             element.forEach((player)=>{
                 player.PG=0
@@ -143,11 +146,10 @@ const Modificar = () => {
                 player.PJ=0
                 player.Pts=0
                 updateProducto(player.id, player,aux)
-            })
-            
-            
-            
+            })            
         })
+        toast.success(`¡El cambio  fue realizada con exito`)
+        console.log("puto")
 
         }
 
@@ -157,77 +159,103 @@ const Modificar = () => {
 
     return (
         <div className="container text-light" style={{marginTop:"20px"}}>
-         <h1 className='text-center mt-5'>{modalidad}</h1>
-         <div className='mt-5 bordesTablero'>
-            <h1 className='mb-5 mt-5'>Declarar Resultado</h1>
+            <div className='d-flex flex-column align-items-center'>
+
          
-        <form method="post" onSubmit={consultarFormulario} ref={datosFormulario}>
+         <h1 className='text-center mt-5'>{modalidad}</h1>         
+         <div className='mt-5 bordesTablero d-flex justify-content-center'>
+            <div className='d-flex flex-column' style={{width:"25rem"}}>
+
+          
+            <h1 className='mb-5 mt-5 text-center'>Declarar Resultado</h1>
+         
+        <form className="d-flex flex-column" method="post" onSubmit={consultarFormulario} ref={datosFormulario}>
         
             <div className="mb-3">
-                <label htmlFor="nombre" className="form-label">Player :</label>
-                <select name='nombre'>
-                    {nombresRender.map((option) => (
-                            <option value={option.nombre} key={nombresRender.indexOf(option)}>{option.nombre}</option>
-                        ))}
-
-                </select>
+                
+                    <label htmlFor="nombre" className="form-label">Player :</label>
+                    <select name='nombre'>
+                        {nombresRender.map((option) => (
+                                <option value={option.nombre} key={nombresRender.indexOf(option)}>{option.nombre}</option>
+                            ))}
+                    </select>
+                              
             </div>    
             <div className="mb-3">
-                <label htmlFor="Resultado" className="form-label pl-5">Resultado :</label>
-                <select name='resultado'>
-                    <option value={"Gano"}>Gano</option>
-                     <option value={"Empato"}>Empato</option>
-                     <option value={"Perdio"}>Perdio</option>
-                </select>
+                
+                    <label htmlFor="Resultado" className="form-label pl-5 align-self-start">Resultado :</label>
+                     <select className='align-self-start' name='resultado'>
+                        <option value={"Gano"}>Gano</option>
+                        <option value={"Empato"}>Empato</option>
+                        <option value={"Perdio"}>Perdio</option>
+                     </select>       
+                              
             </div>
            
-            <button type="submit" className="btn btn-primary mt-5 mb-5">Mandar Resultado</button>
+            <button type="submit" className="btn btn-primary mt-5 mb-5 align-self-center">Mandar Resultado</button>
         </form>
+        </div>
         </div>   
-        <div className='mt-5 bordesTablero'>
-        <h1 className='mb-5 mt-5'>Modificar Valores por Jugador</h1>
+        <div className='mt-5 bordesTablero d-flex flex-column align-items-center'>
+        <h1 className='mb-5 mt-5 text-center'>Modificar Valores por Jugador</h1>
         <form method="post" onSubmit={consultarFormulario2} ref={datosFormulario2}>
         
-            <div className="mb-3">
+            <div className="mb-3 d-flex">
                 <label htmlFor="nombre" className="form-label">Player :</label>
-                <select name='nombre'>
+                <select className="" name='nombre'>
                     {nombresRender.map((option) => (
                             <option value={option.nombre} key={nombresRender.indexOf(option)}>{option.nombre}</option>
                         ))}
 
                 </select>
             </div>    
-            <div className="mb-3">
-                <label htmlFor="PJ" className="form-label">PJ</label>
-                <input type="number" className="form-control border border-secondary" name="PJ" required/>
+            <div className="mb-3 d-flex flex-row justify-content-center">
 
-                <label htmlFor="PG" className="form-label">PG</label>
-                <input type="number" className="form-control border border-secondary" name="PG" required/>
+                <div className='d-flex gap-2 mt-3'>
+                    <label htmlFor="PJ" className="form-label">PJ :</label>
+                    <input type="text" className="form-control border border-secondary inputTablero" name="PJ" ma="0" pattern="^[0-9]+" required/>  
+                </div>
+               
+                <div className='d-flex gap-2 mt-3'>
+                    <label htmlFor="PG" className="form-label">PG :</label>
+                    <input type="text" className="form-control border border-secondary inputTablero" name="PG" required/>     
+                </div>
+               
 
-                <label htmlFor="PE" className="form-label">PE</label>
-                <input type="number" className="form-control border border-secondary" name="PE" required/>
+               <div className='d-flex gap-2 mt-3'>
+                     <label htmlFor="PE" className="form-label">PE :</label>
+                    <input type="text" className="form-control border border-secondary inputTablero" name="PE" required/>        
 
-                <label htmlFor="PP" className="form-label">PP</label>
-                <input type="number" className="form-control border border-secondary" name="PP" required/>
+               </div>
 
-                <label htmlFor="Pts" className="form-label">Pts</label>
-                <input type="number" className="form-control border border-secondary" name="Pts" required/>
+
+               <div className='d-flex gap-2 mt-3'>
+                    <label htmlFor="PP" className="form-label">PP :</label>
+                     <input type="text" className="form-control border border-secondary inputTablero" name="PP" required/>       
+               </div>
+
+               <div className='d-flex gap-2 mt-3'>
+                      <label htmlFor="Pts" className="form-label">Pts :</label>
+                      <input type="text" className="form-control border border-secondary inputTablero" name="Pts" required/>     
+                </div>       
 
             </div>
-           
-            <button type="submit" className="btn btn-primary mt-5 mb-5">Mandar Cambios</button>
+            <div className="mb-3 d-flex justify-content-center">
+                <button type="submit" className="btn btn-primary mt-5 mb-5 ">Mandar Cambios</button>
+            </div>
+        
         </form>              
 
         </div>
 
-        <div className='mt-5 bordesTablero'>
+        <div className='mt-5 bordesTablero d-flex flex-column align-items-center'>
             <h1 className='mb-5 mt-5'> Reinicar Tablero</h1>
 
             <button type="submit" className="btn btn-primary mt-5 mb-5" onClick={reiniciar}>Reinicar Tablero</button>
 
 
         </div>
-        
+        </div>
     </div>
     );
 }
