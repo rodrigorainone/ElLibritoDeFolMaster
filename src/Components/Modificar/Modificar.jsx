@@ -162,7 +162,7 @@ const Modificar = () => {
             <div className='d-flex flex-column align-items-center'>
 
          
-         <h1 className='text-center mt-5'>{modalidad}</h1>         
+         <h1 className='text-center mt-5 tituloPanel'>{modalidad}</h1>         
          <div className='mt-5 bordesTablero d-flex justify-content-center'>
             <div className='d-flex flex-column' style={{width:"25rem"}}>
 

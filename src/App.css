@@ -82,6 +82,8 @@ body{
 .CardAzul{
   background-color: #0b2449;
   border: 3px solid black;
+  caret-color: transparent;
+
 }
 
 .borde{
@@ -155,5 +157,10 @@ body{
   padding: 5px;
   -webkit-text-stroke: 2px black;
   border-radius: 15px;
+  caret-color: transparent;
 }
 
+.tituloPanel{
+  caret-color: transparent;
+
+}

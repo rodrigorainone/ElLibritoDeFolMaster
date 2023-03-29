@@ -56,17 +56,7 @@ const Panel = () => {
                     <h5 className="card-title">Terraforming</h5>                   
                     <Link className='btn btn-dark mt-4' to={"/Panel/Terraforming"}>Ver Panel</Link>
                 </div>
-            </div> 
-
-            
-                
-                
-              
-          
-
-            
-            
-             
+            </div>              
             </div>                    
         </div>
     );
