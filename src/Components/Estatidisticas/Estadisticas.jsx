@@ -9,8 +9,7 @@ const Estadisticas = () => {
     const {juego} = useParams();   
     const {modalidad} = useParams();
     const [fondo,setfondo] = useState('')
-    const [tablaUpColor,settablaUpColor] = useState(true);
-   
+    const [tablaUpColor,settablaUpColor] = useState(true);   
 
     useEffect(() => {
             let aux;
@@ -74,33 +73,29 @@ const Estadisticas = () => {
                         return 0;
             });  
             const arreAux = <ItemDetail plantilla={arreEstOrd}/>
-            setarreEst(arreAux)})
-        
-    }, [modalidad,juego]);
-   
-   
-
-   
+            setarreEst(arreAux)})        
+    }, [modalidad,juego]);   
 
         return (
-        <div className={fondo}>
-            <div className='d-flex justify-content-center'>
-            <table className="table">
-                <thead className={tablaUpColor?"colorArribaMilitar":"colorArribaResto"}>
-                    <tr className=''>
-                        <th scope="col">#</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">PJ</th>
-                        <th scope="col">PG</th>
-                        <th scope="col">PE</th>
-                        <th scope="col">PP</th>
-                        <th scope="col">Pts</th>
-                    </tr>
-                </thead>  
-                <tbody className='colorAbajo'>
-                {arreEst}
-               </tbody>     
-            </table> 
+        <div className={fondo}>            
+            <div className='d-flex flex-column align-items-center'>            
+                <h1 className='tituloEst'>{juego ? juego : modalidad}</h1>       
+                <table className="table">
+                    <thead className={tablaUpColor?"colorArribaMilitar":"colorArribaResto"}>
+                        <tr className=''>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">PJ</th>
+                            <th scope="col">PG</th>
+                            <th scope="col">PE</th>
+                            <th scope="col">PP</th>
+                            <th scope="col">Pts</th>
+                        </tr>
+                    </thead>  
+                    <tbody className='colorAbajo'>
+                        {arreEst}
+                    </tbody>     
+                </table> 
             </div>
         </div>
     );
