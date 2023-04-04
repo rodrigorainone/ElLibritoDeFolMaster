@@ -7,7 +7,7 @@ import Footer from './Components/Footer/Footer';
 import { Routes,Route,BrowserRouter } from 'react-router-dom';
 import Coh3 from './Components/Coh3/Coh3';
 import Home from './Components/Home/Home';
-import { cargarBDD,cargarBDD2,cargarBDD3 ,cargarBDD4, cargarBDDCatan, cargarBDDTerra } from './Firebase/firebase';
+import { cargarBDD,cargarBDD2,cargarBDD3 ,cargarBDD4, cargarBDDCatan, cargarBDDTerra,cargarBDDFifa } from './Firebase/firebase';
 import Modificar from './Components/Modificar/Modificar';
 import Panel from './Components/Panel/Panel';
 import { ToastContainer, toast } from 'react-toastify';
@@ -20,6 +20,7 @@ function App() {
   //cargarBDD4()
   //cargarBDDCatan()
   //cargarBDDTerra()
+  //cargarBDDFifa()
   return (
     <>
     <BrowserRouter>     

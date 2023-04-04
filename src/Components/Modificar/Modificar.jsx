@@ -35,8 +35,10 @@ const Modificar = () => {
             
         break;
         case 'Terraforming':
-            aux='Terraforming';
-            
+            aux='Terraforming';            
+        break;
+        case 'Fifa':
+            aux='Fifa';            
         break;
         default:
         console.log('esta mal');

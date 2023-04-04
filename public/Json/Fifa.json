@@ -1,0 +1,65 @@
+[
+    {
+        "nombre":"Tuky",
+        "img":"./img/bandera polonia.png",
+        "PJ":0,
+        "PG":0,
+        "PE":0,
+        "PP":0,        
+        "Pts":0
+    },
+    {
+        "nombre":"Marquitos",
+        "img":"./img/bandera polonia.png",
+        "PJ":0,
+        "PG":0,
+        "PE":0,
+        "PP":0,        
+        "Pts":0
+    },
+    {
+        "nombre":"Cholo",
+        "img":"./img/bandera polonia.png",
+        "PJ":0,
+        "PG":0,
+        "PE":0,
+        "PP":0,        
+        "Pts":0
+    },
+    {
+        "nombre":"Rambo",
+        "img":"./img/bandera polonia.png",
+        "PJ":0,
+        "PG":0,
+        "PE":0,
+        "PP":0,        
+        "Pts":0
+    },
+    {
+        "nombre":"Brunito",
+        "img":"./img/bandera polonia.png",
+        "PJ":0,
+        "PG":0,
+        "PE":0,
+        "PP":0,        
+        "Pts":0
+    },
+    {
+        "nombre":"Mars",
+        "img":"./img/bandera polonia.png",
+        "PJ":0,
+        "PG":0,
+        "PE":0,
+        "PP":0,        
+        "Pts":0
+    },
+    {
+        "nombre":"Fol",
+        "img":"./img/bandera polonia.png",
+        "PJ":0,
+        "PG":0,
+        "PE":0,
+        "PP":0,        
+        "Pts":0
+    }        
+]

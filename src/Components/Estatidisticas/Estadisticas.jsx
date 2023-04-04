@@ -47,8 +47,11 @@ const Estadisticas = () => {
                   break;
                 case 'TerraformingMars':
                     aux='Terraforming';
-                    setfondo('contenedorEst fondoTerra');
-                   
+                    setfondo('contenedorEst fondoTerra');                   
+                break;
+                case 'Fifa':
+                    aux='Fifa';   
+                    setfondo('contenedorEst fondoFifa');           
                 break;               
                 default:
                     console.log('esta mal');

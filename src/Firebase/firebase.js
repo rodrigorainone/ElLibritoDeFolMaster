@@ -109,6 +109,21 @@ export const cargarBDD2 = async () =>{
     });
   } 
 
+  export const cargarBDDFifa = async () =>{
+    const promise = await fetch('./json/Fifa.json')
+    const productos = await promise.json()
+    productos.forEach(async (element) => {
+        await addDoc(collection(db,"Fifa"),{
+          nombre:element.nombre,
+          img:element.img,
+          PJ:element.PJ,        
+          PG:element.PG,
+          PE:element.PE,
+          PP:element.PP,       
+          Pts:element.Pts
+        })
+    });
+  } 
 
 export const getProductos = async(aux) => {
 

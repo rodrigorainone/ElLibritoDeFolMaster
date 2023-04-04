@@ -28,6 +28,7 @@ const Nav = () => {
             <li><Link className="dropdown-item" to={"Estadisticas/Coh3"}>Coh3</Link></li>
             <li><Link className="dropdown-item" to={"/Estadisticas/TerraformingMars"}>Terraforming Mars</Link></li>
             <li><Link className="dropdown-item" to={"/Estadisticas/Catan"}>Catan</Link></li>
+            <li><Link className="dropdown-item" to={"/Estadisticas/Fifa"}>Fifa</Link></li>
           </ul>
         </li>
         <li className="nav-item">
