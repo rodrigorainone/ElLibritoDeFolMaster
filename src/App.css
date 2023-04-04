@@ -6,6 +6,9 @@ body{
 .contenedorEst{  
   height: 900px;
 }
+.contenedorEstP{
+  height: 900px;
+}
 
 .colorArribaMilitar{
   background-image: url(../public/Img/tablaMilitar.jpg);
@@ -182,4 +185,47 @@ body{
 .TituloFol{
   color:white;
   font-weight: bold;
+}
+
+@media (min-width: 1px) and (max-width: 599px) {
+
+
+  .contenedorEstP{  
+    height:2500px;
+    background-image: none;
+    background-color:darkkhaki;
+  }
+
+  .contenedorEst{  
+    height:1500px;
+    background-image: none;
+    background-color:darkkhaki;
+  }
+
+  .mobile{
+    display: flex;
+    justify-content: center;
+  }
+
+  .fondoFifa{
+    background-image: none;
+    height: 800px;
+  }
+
+  .fondoCatan{
+    background-image: none;
+    height: 800px;
+  }
+
+  .fondoMilitar{
+    background-image: none;
+    height: 800px;
+  }
+
+  .fondoTerra{
+    background-image: none;
+    height: 800px;
+  }
+
+
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Panel = () => {
     return (
-        <div className='contenedorEst fondoMilitar d-flex justify-content-center'>
+        <div className='contenedorEstP fondoMilitar d-flex justify-content-center'>
             
             <div className='d-flex flex-wrap justify-content-around gap-5 pt-5 mb-5' style={{width: '70rem'}}>
                 

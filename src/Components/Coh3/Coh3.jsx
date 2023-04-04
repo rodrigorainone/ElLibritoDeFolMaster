@@ -5,7 +5,7 @@ const Coh3 = () => {
     return (
         <div className='contenedorEst fondoMilitar'>
             <div className='d-flex justify-content-around pt-5'>
-            <div className='row gap-5 pt-5'>
+            <div className='mobile row gap-5 pt-5'>
                 
                   <div className="card CardAzul text-light" style={{width: '18rem'}}>
                     <img src="../../Img/company.jpg" className="card-img-top mt-3 borde" alt="..." />
