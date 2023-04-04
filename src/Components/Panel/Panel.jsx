@@ -58,7 +58,7 @@ const Panel = () => {
                 </div>
             </div>   
             <div className="card CardAzul text-light" style={{width: '15rem'}}>
-            <img src="../../Img/FondoFifa.jpg" className="card-img-top mt-3 borde" alt="..." />
+            <img src="../../Img/fondoFifa.jpg" className="card-img-top mt-3 borde" alt="..." />
                 <div className="card-body text-center">
                     <h5 className="card-title">Fifa</h5>                   
                     <Link className='btn btn-dark mt-4' to={"/Panel/Fifa"}>Ver Panel</Link>
