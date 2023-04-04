@@ -209,23 +209,26 @@ body{
 
   .fondoFifa{
     background-image: none;
-    height: 800px;
+   
   }
 
   .fondoCatan{
     background-image: none;
-    height: 800px;
+    
   }
 
   .fondoMilitar{
     background-image: none;
-    height: 800px;
+    
   }
 
   .fondoTerra{
     background-image: none;
-    height: 800px;
+    
   }
 
+  .altoEstadistica{
+    height: 800px;   
+  }
 
 }

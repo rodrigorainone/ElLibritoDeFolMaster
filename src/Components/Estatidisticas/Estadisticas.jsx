@@ -80,7 +80,7 @@ const Estadisticas = () => {
     }, [modalidad,juego]);   
 
         return (
-        <div className={fondo}>            
+        <div className={fondo +" "+"altoEstadistica"}>            
             <div className='d-flex flex-column align-items-center'>            
                 <h1 className='tituloEst'>{juego ? juego : modalidad}</h1>       
                 <table className="table">
