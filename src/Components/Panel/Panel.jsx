@@ -43,7 +43,7 @@ const Panel = () => {
             </div> 
 
             <div className="card CardAzul text-light" style={{width: '15rem'}}>
-            <img src="../../Img/FondoCatan.jpg" className="card-img-top mt-3 borde" alt="..." />
+            <img src="../../Img/fondoCatan.jpg" className="card-img-top mt-3 borde" alt="..." />
                 <div className="card-body text-center">
                     <h5 className="card-title">Catan</h5>                   
                     <Link className='btn btn-dark mt-4' to={"/Panel/Catan"}>Ver Panel</Link>
@@ -51,7 +51,7 @@ const Panel = () => {
             </div> 
 
             <div className="card CardAzul text-light" style={{width: '15rem'}}>
-            <img src="../../Img/FondoTerra.jpg" className="card-img-top mt-3 borde" alt="..." />
+            <img src="../../Img/fondoTerra.jpg" className="card-img-top mt-3 borde" alt="..." />
                 <div className="card-body text-center">
                     <h5 className="card-title">Terraforming</h5>                   
                     <Link className='btn btn-dark mt-4' to={"/Panel/Terraforming"}>Ver Panel</Link>
