@@ -161,8 +161,9 @@ body{
 }
 
 .inputTablero {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
+  margin-right: 20px;
 }
 
 .tituloEst{
@@ -186,6 +187,21 @@ body{
   color:white;
   font-weight: bold;
 }
+
+.ModVal{
+  display: flex;
+  
+}
+
+.DeclararResulPlayerLAbel{
+  margin-right: 45px;
+}
+
+.DeclararResulResulLabel{
+  margin-right: 20px;
+
+}
+
 
 @media (min-width: 1px) and (max-width: 599px) {
 
@@ -231,4 +247,45 @@ body{
     height: 800px;   
   }
 
+  .inputTablero {
+    width: 35px;
+    height: 35px;
+  }
+
+  .ModVal{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+
+  
+
+  .PG{
+    margin-right: 2px;
+
+  }
+  .Pts{
+    margin-right: 3px;
+  }
+
+  .PP,.PE,.PJ{
+    margin-right: 6px;
+  }
+
+  .PJ{
+    margin-right: 7px;
+  }
+
+  .DeclararResul{
+    margin-left: 40px;
+  }
+
+  .DeclararResulPlayerLAbel{
+    margin-right: 45px;
+  }
+
+  .DeclararResulResulLabel{
+    margin-right: 20px;
+  
+  }
 }

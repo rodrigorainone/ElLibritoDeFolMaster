@@ -132,8 +132,9 @@ const Modificar = () => {
                 updateProducto(found2.id, prodBDD,aux)
             })
             toast.success(`¡El cambio  fue realizada con exito`)
-
         }
+
+        
 
 
         const reiniciar = (e) =>{
@@ -171,11 +172,11 @@ const Modificar = () => {
           
             <h1 className='mb-5 mt-5 text-center'>Declarar Resultado</h1>
          
-        <form className="d-flex flex-column" method="post" onSubmit={consultarFormulario} ref={datosFormulario}>
+        <form className="d-flex flex-column " method="post" onSubmit={consultarFormulario} ref={datosFormulario}>
         
-            <div className="mb-3">
+            <div className="mb-3 DeclararResul">
                 
-                    <label htmlFor="nombre" className="form-label">Player :</label>
+                    <label htmlFor="nombre" className="form-label DeclararResulPlayerLAbel">Player :</label>
                     <select name='nombre'>
                         {nombresRender.map((option) => (
                                 <option value={option.nombre} key={nombresRender.indexOf(option)}>{option.nombre}</option>
@@ -183,9 +184,9 @@ const Modificar = () => {
                     </select>
                               
             </div>    
-            <div className="mb-3">
+            <div className="mb-3 DeclararResul">
                 
-                    <label htmlFor="Resultado" className="form-label pl-5 align-self-start">Resultado :</label>
+                    <label htmlFor="Resultado" className="form-label pl-5 align-self-start DeclararResulResulLabel">Resultado :</label>
                      <select className='align-self-start' name='resultado'>
                         <option value={"Gano"}>Gano</option>
                         <option value={"Empato"}>Empato</option>
@@ -203,7 +204,7 @@ const Modificar = () => {
         <form method="post" onSubmit={consultarFormulario2} ref={datosFormulario2}>
         
             <div className="mb-3 d-flex">
-                <label htmlFor="nombre" className="form-label">Player :</label>
+                <label htmlFor="nombre" className="form-label DeclararResulPlayerLAbel">Player :</label>
                 <select className="" name='nombre'>
                     {nombresRender.map((option) => (
                             <option value={option.nombre} key={nombresRender.indexOf(option)}>{option.nombre}</option>
@@ -211,34 +212,34 @@ const Modificar = () => {
 
                 </select>
             </div>    
-            <div className="mb-3 d-flex flex-row justify-content-center">
+            <div className="ModVal">
 
                 <div className='d-flex gap-2 mt-3'>
-                    <label htmlFor="PJ" className="form-label">PJ :</label>
-                    <input type="text" className="form-control border border-secondary inputTablero" name="PJ" maxlength="1" pattern="^[0-9]+" required/>  
+                    <label htmlFor="PJ" className="form-label PJ">PJ:</label>
+                    <input type="text" className="form-control border border-secondary inputTablero" name="PJ" maxLength="1" pattern="^[0-9]+" required/>  
                 </div>
                
                 <div className='d-flex gap-2 mt-3'>
-                    <label htmlFor="PG" className="form-label">PG :</label>
-                    <input type="text" className="form-control border border-secondary inputTablero" name="PG" maxlength="1" pattern="^[0-9]+" required/>     
+                    <label htmlFor="PG" className="form-label PG">PG:</label>
+                    <input type="text" className="form-control border border-secondary inputTablero" name="PG" maxLength="1" pattern="^[0-9]+" required/>     
                 </div>
                
 
                <div className='d-flex gap-2 mt-3'>
-                     <label htmlFor="PE" className="form-label">PE :</label>
-                    <input type="text" className="form-control border border-secondary inputTablero" name="PE" maxlength="1" pattern="^[0-9]+" required/>        
+                     <label htmlFor="PE" className="form-label PE">PE:</label>
+                    <input type="text" className="form-control border border-secondary inputTablero" name="PE" maxLength="1" pattern="^[0-9]+" required/>        
 
                </div>
 
 
                <div className='d-flex gap-2 mt-3'>
-                    <label htmlFor="PP" className="form-label">PP :</label>
-                     <input type="text" className="form-control border border-secondary inputTablero" name="PP" maxlength="1" pattern="^[0-9]+" required/>       
+                    <label htmlFor="PP" className="form-label PP">PP:</label>
+                     <input type="text" className="form-control border border-secondary inputTablero" name="PP" maxLength="1" pattern="^[0-9]+" required/>       
                </div>
 
                <div className='d-flex gap-2 mt-3'>
-                      <label htmlFor="Pts" className="form-label">Pts :</label>
-                      <input type="text" className="form-control border border-secondary inputTablero" name="Pts" maxlength="1" pattern="^[0-9]+" required/>     
+                      <label htmlFor="Pts" className="form-label Pts">Pts:</label>
+                      <input type="text" className="form-control border border-secondary inputTablero" name="Pts" maxLength="1" pattern="^[0-9]+" required/>     
                 </div>       
 
             </div>

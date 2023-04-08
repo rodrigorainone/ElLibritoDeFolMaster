@@ -163,6 +163,20 @@ export const createOrdenCompra = async(cliente, productos,precioTotal, fecha) =>
   return ordenCompra
 }
 
+export const agregarPlayer = async(nombre,aux) => {
+  const nuevoPlayer = await addDoc(collection(db, aux), {
+    "nombre":nombre,
+    "img":"./img/bandera polonia.png",
+    "PJ":0,
+    "PG":0,
+    "PE":0,
+    "PP":0,        
+    "Pts":0
+  })
+  return nuevoPlayer
+}
+
+
 export const getOrdenCompra = async(id) => {
   const ordenCompra = await getDoc(doc(db, "ordenCompra", id))
   const oCompra = {...ordenCompra.data(), id: ordenCompra.id}
