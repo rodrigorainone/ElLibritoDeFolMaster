@@ -119,7 +119,10 @@ export const cargarBDD2 = async () =>{
           PJ:element.PJ,        
           PG:element.PG,
           PE:element.PE,
-          PP:element.PP,       
+          PP:element.PP,  
+          GF:element.GF,
+          GC:element.GC,   
+          Dif:element.Dif,    
           Pts:element.Pts
         })
     });
@@ -170,7 +173,7 @@ export const agregarPlayer = async(nombre,aux) => {
     "PJ":0,
     "PG":0,
     "PE":0,
-    "PP":0,        
+    "PP":0,
     "Pts":0
   })
   return nuevoPlayer

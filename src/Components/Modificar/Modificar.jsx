@@ -71,51 +71,118 @@ const Modificar = () => {
         
         const found = nombres.find(element => element.nombre===cliente.nombre);
         console.log(found)
-        switch (cliente.resultado) {
-            case 'Gano':                   
-                        getProducto(found.id,aux).then(prodBDD => {
-                            console.log("tuky pro")
-                            console.log(prodBDD)
-                            prodBDD.Pts += 3 //suma los puntos + 3
-                            prodBDD.PG +=1
-                            prodBDD.PJ +=1
-                            updateProducto(found.id, prodBDD,aux)
-                        }) 
-                        
-                       
-                                
+        if (aux==='Fifa'){
+            console.log(cliente)
+            switch (cliente.resultado) {
+                case 'Gano':                   
+                            getProducto(found.id,aux).then(prodBDD => {                                
+                                console.log("tuky pro")
+                                console.log(prodBDD)
+                                prodBDD.Pts += 3 //suma los puntos + 3
+                                prodBDD.PG +=1
+                                prodBDD.PJ +=1
+                                let auxiliarGF = parseInt(prodBDD.GF) + parseInt(cliente.GF)
+                                console.log(auxiliarGF)
+                                prodBDD.GF = auxiliarGF
+                                let auxiliarGC = parseInt(prodBDD.GC) + parseInt(cliente.GC)
+                                prodBDD.GC = auxiliarGC
+                                let auxiliarDif = (auxiliarGF) - (auxiliarGC)
+                                prodBDD.Dif = auxiliarDif
+                                updateProducto(found.id, prodBDD,aux)
+                            }) 
+                            
                            
-              break;
-            case 'Perdio':
-                   
-                        getProducto(found.id,aux).then(prodBDD => {   
-                            prodBDD.PP +=1                  
-                            prodBDD.PJ +=1
-                            updateProducto(found.id, prodBDD,aux)
-                        }) 
-                    
-                    
-                  
-              break;
-            case 'Empato':
-                    
-                        getProducto(found.id,aux).then(prodBDD => {
-                            prodBDD.PE +=1
-                            prodBDD.Pts += 1 //suma los puntos + 1
-                            prodBDD.PJ +=1
-                            updateProducto(found.id, prodBDD,aux)
-                        })                    
-                                
-                  
-              break;            
-            default:
-              console.log('Lo lamentamos, por el momento no disponemos de ' + cliente.resultado + '.');
-          } 
+                                    
+                               
+                  break;
+                case 'Perdio':
+                       
+                            getProducto(found.id,aux).then(prodBDD => {   
+                                prodBDD.PP +=1                  
+                                prodBDD.PJ +=1
+                                let auxiliarGF = parseInt(prodBDD.GF) + parseInt(cliente.GF)
+                                console.log(auxiliarGF)
+                                prodBDD.GF = auxiliarGF
+                                let auxiliarGC = parseInt(prodBDD.GC) + parseInt(cliente.GC)
+                                prodBDD.GC = auxiliarGC
+                                let auxiliarDif = (auxiliarGF) - (auxiliarGC)
+                                prodBDD.Dif = auxiliarDif
+                                updateProducto(found.id, prodBDD,aux)
+                            }) 
+                        
+                        
+                      
+                  break;
+                case 'Empato':
+                        
+                            getProducto(found.id,aux).then(prodBDD => {
+                                prodBDD.PE +=1
+                                prodBDD.Pts += 1 //suma los puntos + 1
+                                prodBDD.PJ +=1
+                                let auxiliarGF = parseInt(prodBDD.GF) + parseInt(cliente.GF)
+                                console.log(auxiliarGF)
+                                prodBDD.GF = auxiliarGF
+                                let auxiliarGC = parseInt(prodBDD.GC) + parseInt(cliente.GC)
+                                prodBDD.GC = auxiliarGC
+                                let auxiliarDif = (auxiliarGF) - (auxiliarGC)
+                                prodBDD.Dif = auxiliarDif
+                                updateProducto(found.id, prodBDD,aux)
+                            })                    
+                                    
+                      
+                  break;            
+                default:
+                  console.log('Lo lamentamos, por el momento no disponemos de ' + cliente.resultado + '.');
+              } 
+        }
+        else{
+            switch (cliente.resultado) {
+                case 'Gano':                   
+                            getProducto(found.id,aux).then(prodBDD => {
+                                console.log("tuky pro")
+                                console.log(prodBDD)
+                                prodBDD.Pts += 3 //suma los puntos + 3
+                                prodBDD.PG +=1
+                                prodBDD.PJ +=1                                
+                                updateProducto(found.id, prodBDD,aux)
+                            }) 
+                            
+                           
+                                    
+                               
+                  break;
+                case 'Perdio':
+                       
+                            getProducto(found.id,aux).then(prodBDD => {   
+                                prodBDD.PP +=1                  
+                                prodBDD.PJ +=1                                
+                                updateProducto(found.id, prodBDD,aux)
+                            }) 
+                        
+                        
+                      
+                  break;
+                case 'Empato':
+                        
+                            getProducto(found.id,aux).then(prodBDD => {
+                                prodBDD.PE +=1
+                                prodBDD.Pts += 1 //suma los puntos + 1
+                                prodBDD.PJ +=1                                
+                                updateProducto(found.id, prodBDD,aux)
+                            })                    
+                                    
+                      
+                  break;            
+                default:
+                  console.log('Lo lamentamos, por el momento no disponemos de ' + cliente.resultado + '.');
+              } 
+        }
+        
         toast.success(`¡El cambio  fue realizada con exito`)   
         }
 
 
-        const consultarFormulario2 = (e) => {
+        const consultarFormulario2 = (e) => {            
             e.preventDefault()       
             const datForm2 = new FormData(datosFormulario2.current)
             const cliente2 = Object.fromEntries(datForm2)
@@ -123,14 +190,29 @@ const Modificar = () => {
             console.log(cliente2)
             const found2 = nombres.find(element => element.nombre===cliente2.nombre);
 
-            getProducto(found2.id,aux).then(prodBDD => {   
-                prodBDD.PJ = cliente2.PJ
-                prodBDD.PG = cliente2.PG               
-                prodBDD.PE = cliente2.PE
-                prodBDD.PP = cliente2.PP
-                prodBDD.Pts = cliente2.Pts
-                updateProducto(found2.id, prodBDD,aux)
-            })
+            if (aux==='Fifa'){
+                getProducto(found2.id,aux).then(prodBDD => {   
+                    prodBDD.PJ = cliente2.PJ
+                    prodBDD.PG = cliente2.PG               
+                    prodBDD.PE = cliente2.PE
+                    prodBDD.PP = cliente2.PP
+                    prodBDD.GF = cliente2.GF
+                    prodBDD.GC = cliente2.GC
+                    prodBDD.Dif = cliente2.Dif
+                    prodBDD.Pts = cliente2.Pts
+                    updateProducto(found2.id, prodBDD,aux)
+                })
+
+            }else{
+                getProducto(found2.id,aux).then(prodBDD => {   
+                    prodBDD.PJ = cliente2.PJ
+                    prodBDD.PG = cliente2.PG               
+                    prodBDD.PE = cliente2.PE
+                    prodBDD.PP = cliente2.PP
+                    prodBDD.Pts = cliente2.Pts
+                    updateProducto(found2.id, prodBDD,aux)
+                })
+            }            
             toast.success(`¡El cambio  fue realizada con exito`)
         }
 
@@ -139,20 +221,42 @@ const Modificar = () => {
 
         const reiniciar = (e) =>{
 
-            getProductos(aux)
-            .then(element=>{
 
-            element.forEach((player)=>{
-                player.PG=0
-                player.PE=0
-                player.PP=0
-                player.PJ=0
-                player.Pts=0
-                updateProducto(player.id, player,aux)
-            })            
-        })
+            if (aux==='Fifa'){
+                getProductos(aux)
+                .then(element=>{
+
+                element.forEach((player)=>{
+                    player.PG=0
+                    player.PE=0
+                    player.PP=0
+                    player.PJ=0
+                    player.GF=0
+                    player.GC=0
+                    player.Dif=0
+                    player.Pts=0
+                    updateProducto(player.id, player,aux)
+                })            
+                })
+            }
+            else{
+                getProductos(aux)
+                .then(element=>{
+
+                element.forEach((player)=>{
+                    player.PG=0
+                    player.PE=0
+                    player.PP=0
+                    player.PJ=0
+                    player.Pts=0
+                    updateProducto(player.id, player,aux)
+                })            
+                })
+            }
+
+           
         toast.success(`¡El cambio  fue realizada con exito`)
-        console.log("puto")
+        
 
         }
 
@@ -192,6 +296,19 @@ const Modificar = () => {
                         <option value={"Empato"}>Empato</option>
                         <option value={"Perdio"}>Perdio</option>
                      </select>       
+
+                     {modalidad==='Fifa'?(
+                        <>
+                            <div className='d-flex gap-2 mt-3'>
+                                <label htmlFor="GF" className="form-label GF">GF:</label>
+                                <input type="text" className="form-control border border-secondary inputTablero" name="GF" maxLength="1" pattern="^[0-9]+" required/>     
+                            </div>
+                            <div className='d-flex gap-2 mt-3'>
+                                <label htmlFor="GC" className="form-label GC">GC:</label>
+                                <input type="text" className="form-control border border-secondary inputTablero" name="GC" maxLength="1" pattern="^[0-9]+" required/>     
+                            </div>
+                        </>
+                     ):(<></>)}
                               
             </div>
            
@@ -236,6 +353,25 @@ const Modificar = () => {
                     <label htmlFor="PP" className="form-label PP">PP:</label>
                      <input type="text" className="form-control border border-secondary inputTablero" name="PP" maxLength="1" pattern="^[0-9]+" required/>       
                </div>
+
+               {modalidad ==='Fifa'?( 
+                <>
+                    <div className='d-flex gap-2 mt-3'>
+                        <label htmlFor="GF" className="form-label GF">GF:</label>
+                        <input type="text" className="form-control border border-secondary inputTablero" name="GF" maxLength="1" pattern="^[0-9]+" required/>     
+                    </div>
+                    <div className='d-flex gap-2 mt-3'>
+                        <label htmlFor="GC" className="form-label GC">GC:</label>
+                        <input type="text" className="form-control border border-secondary inputTablero" name="GC" maxLength="1" pattern="^[0-9]+" required/>     
+                    </div>
+                    <div className='d-flex gap-2 mt-3'>
+                        <label htmlFor="Dif" className="form-label Dif">Dif:</label>
+                        <input type="text" className="form-control border border-secondary inputTablero" name="Dif" maxLength="1" pattern="^[0-9]+" required/>     
+                    </div>
+                </>             
+                    
+                    ):( <></> )                    
+                } 
 
                <div className='d-flex gap-2 mt-3'>
                       <label htmlFor="Pts" className="form-label Pts">Pts:</label>
