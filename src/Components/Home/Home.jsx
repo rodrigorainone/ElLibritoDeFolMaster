@@ -8,7 +8,7 @@ const Home = () => {
             <CarouselF/>
             <div className='d-flex flex-column mt-5 gap-4 align-items-center'>
                 <h1 className='text-light'>Noticias</h1>
-                <Noticias/>
+                {/* <Noticias/> */}
             </div>
         </>
     );

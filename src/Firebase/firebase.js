@@ -179,6 +179,25 @@ export const agregarPlayer = async(nombre,aux) => {
   return nuevoPlayer
 }
 
+export const agregarPlayerFifa = async(nombre,aux) => {
+  const nuevoPlayer = await addDoc(collection(db, aux), {
+    "nombre":nombre,
+    "img":"./img/bandera polonia.png",
+    "PJ":0,
+    "PG":0,
+    "PE":0,
+    "PP":0,
+    "GF":0,
+    "GC":0,
+    "Dif":0,
+    "Pts":0
+  })
+  return nuevoPlayer
+}
+
+export const deletePlayer = async(id,aux) => {
+  await deleteDoc(doc(db, aux, id))
+}
 
 export const getOrdenCompra = async(id) => {
   const ordenCompra = await getDoc(doc(db, "ordenCompra", id))

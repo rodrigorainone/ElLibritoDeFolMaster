@@ -1,5 +1,5 @@
 import React from 'react';
-import { getProductos , getProducto , updateProducto} from '../../Firebase/firebase';
+import { getProductos , getProducto , updateProducto , deletePlayer,agregarPlayer,agregarPlayerFifa} from '../../Firebase/firebase';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
@@ -9,8 +9,11 @@ const Modificar = () => {
 
     const [nombres,setnombres] = useState([])
     const [nombresRender,setnombresRender]= useState([])
+    const [cambioNombres, setcambioNombres] = useState(true)
     const datosFormulario = React.useRef()
     const datosFormulario2 = React.useRef()
+    const datosFormulario3 = React.useRef()
+    const datosFormulario4 = React.useRef()
     const {modalidad} = useParams();
     let aux;
 
@@ -56,7 +59,7 @@ const Modificar = () => {
             setnombresRender(nombresaux)
             
         })
-    }, []);
+    }, [cambioNombres]);
 
    
   
@@ -216,6 +219,33 @@ const Modificar = () => {
             toast.success(`¡El cambio  fue realizada con exito`)
         }
 
+        const consultarFormulario3 = (e) => {            
+            e.preventDefault()       
+            const datForm3 = new FormData(datosFormulario3.current)
+            const cliente3 = Object.fromEntries(datForm3)
+            console.log(cliente3)
+            const found3 = nombres.find(element => element.nombre===cliente3.nombre);
+            deletePlayer(found3.id,aux)      
+            setcambioNombres(!cambioNombres)                
+            toast.success(`¡El cambio  fue realizada con exito`)
+        }
+
+          const consultarFormulario4 = (e) => {            
+            e.preventDefault()       
+            const datForm4 = new FormData(datosFormulario4.current)
+            const cliente4 = Object.fromEntries(datForm4)
+            console.log(cliente4.nombre)            
+             if (aux==='Fifa'){
+                agregarPlayerFifa(cliente4.nombre,aux)
+            }
+            else{
+                agregarPlayer(cliente4.nombre,aux) 
+            }  
+             
+            setcambioNombres(!cambioNombres)                
+           toast.success(`¡El cambio  fue realizada con exito`)
+       } 
+ 
         
 
 
@@ -389,11 +419,36 @@ const Modificar = () => {
 
         <div className='mt-5 bordesTablero d-flex flex-column align-items-center'>
             <h1 className='mb-5 mt-5'> Reinicar Tablero</h1>
-
             <button type="submit" className="btn btn-primary mt-5 mb-5" onClick={reiniciar}>Reinicar Tablero</button>
-
-
         </div>
+        <div className='mt-5 bordesTablero d-flex justify-content-center'>
+            <div className='d-flex flex-column' style={{width:"25rem"}}>          
+                <h1 className='mb-5 mt-5 text-center'>Eliminar Jugador</h1>         
+                <form className="d-flex flex-column " method="post" onSubmit={consultarFormulario3} ref={datosFormulario3}>        
+                    <div className="mb-3 DeclararResul">                
+                        <label htmlFor="nombre" className="form-label DeclararResulPlayerLAbel">Player :</label>
+                        <select name='nombre'>
+                            {nombresRender.map((option) => (
+                             <option value={option.nombre} key={nombresRender.indexOf(option)}>{option.nombre}</option>
+                            ))}
+                        </select>                              
+                    </div>        
+                    <button type="submit" className="btn btn-primary mt-5 mb-5 align-self-center">Eliminar Player</button>
+                </form>
+            </div>
+        </div>   
+        <div className='mt-5 bordesTablero d-flex justify-content-center'>
+            <div className='d-flex flex-column' style={{width:"25rem"}}>          
+                <h1 className='mb-5 mt-5 text-center'>Agregar Jugador</h1>         
+                <form className="d-flex flex-column " method="post" onSubmit={consultarFormulario4} ref={datosFormulario4}>        
+                    <div className="mb-3 ">                
+                        <label htmlFor="nombre" className="form-label ">Nombre Del Nuevo Player :</label>
+                        <input type="text" className="form-control border border-secondary" name="nombre" maxLength="8"  required/>                             
+                    </div>        
+                    <button type="submit" className="btn btn-primary mt-5 mb-5 align-self-center">Agregar Player</button>
+                </form>
+            </div>
+        </div>      
         </div>
     </div>
     );
